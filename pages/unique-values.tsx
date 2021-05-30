@@ -1,7 +1,7 @@
 import Head from 'next/head';
-import { useState, useRef, useEffect } from 'react';
-import styles from '../../styles/Home.module.css';
-import unique from '../../util/unique';
+import { useState } from 'react';
+import styles from '../styles/Home.module.css';
+import unique from '../util/unique';
 
 const UniqueValues = () => {
   const values = [8367677, 4209111, 4209111, 8675309, 83767677];
@@ -9,7 +9,7 @@ const UniqueValues = () => {
   const [uniqueValues, setUniqueValues] = useState<number[]>([]);
 
   const getUniqueValues = () => {
-    // setUniqueValues(unique(values));
+    setUniqueValues(unique(values));
   };
 
   return (

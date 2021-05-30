@@ -1,8 +1,8 @@
 import Head from 'next/head';
 import { useState, useRef } from 'react';
 import * as mobilenet from '@tensorflow-models/mobilenet';
-import styles from '../../styles/Home.module.css';
-import ImageUploader from './ImageUploader';
+import styles from '../styles/Home.module.css';
+import ImageUploader from '../pageComponents/ImageUploader';
 
 const TruckAlert = () => {
   const imageRef = useRef<HTMLImageElement>(null);
