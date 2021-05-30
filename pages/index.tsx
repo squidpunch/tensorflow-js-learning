@@ -26,6 +26,10 @@ export default function Home() {
             <h2>Truck Alert &rarr;</h2>
             <p>Use mobilenet to verify if an image is a truck or not.</p>
           </a>
+          <a href="unique-values" className={styles.card}>
+            <h2>Unique Values &rarr;</h2>
+            <p>Use tensorflow to get unique values of an array for funsies.</p>
+          </a>
         </div>
       </main>
 
