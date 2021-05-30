@@ -26,7 +26,11 @@ const ImageUploader = ({ onUpload }) => {
 
   return (
     <>
-      <button type="button" onClick={() => inputRef.current?.click()}>
+      <button
+        type="button"
+        className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+        onClick={() => inputRef.current?.click()}
+      >
         Upload an Image
       </button>
       <input
