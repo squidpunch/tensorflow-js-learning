@@ -1,5 +1,4 @@
 import Head from 'next/head';
-import { ReactChildren } from 'react';
 
 type DemoPageProps = {
   title: string;
@@ -12,9 +11,9 @@ const DemoPage = ({ title, description, children }: DemoPageProps) => (
     <Head>
       <title>Learning TensorFlow.js | {title}</title>
     </Head>
-    <main className="flex flex-col justify-center items-center py-20 px-0 flex-1">
+    <main className="flex flex-col justify-center items-center py-20 px-0 flex-1 w-3/5">
       <h1 className="m-0 leading-tight text-7xl font-bold">{title}</h1>
-      <p>{description}</p>
+      <p className="mb-5">{description}</p>
       {children}
     </main>
     <footer className="w-full h-20 border-t-2 flex justify-center items-center">

@@ -23,12 +23,16 @@ export default function Home() {
 
         <div className={styles.grid}>
           <a href="truck-alert" className={styles.card}>
-            <h2>Truck Alert &rarr;</h2>
+            <h2>Chapter 2: Truck Alert &rarr;</h2>
             <p>Use mobilenet to verify if an image is a truck or not.</p>
           </a>
           <a href="unique-values" className={styles.card}>
-            <h2>Unique Values &rarr;</h2>
+            <h2>Chapter 3: Unique Values &rarr;</h2>
             <p>Use tensorflow to get unique values of an array for funsies.</p>
+          </a>
+          <a href="sorting-chaos" className={styles.card}>
+            <h2>Chapter 4: Sorting Chaos &rarr;</h2>
+            <p>Take a random grayscale tensor and sort the pixels.</p>
           </a>
         </div>
       </main>
