@@ -14,7 +14,7 @@ export default function Home() {
       </Head>
 
       <main className="flex flex-col justify-center items-center py-20 px-0 flex-1">
-        <h1 className="m-0 leading-tight text-7xl font-bold">
+        <h1 className="m-0 leading-tight text-xl md:text-5xl font-bold">
           Learning TensorFlow.js
         </h1>
 
@@ -23,7 +23,7 @@ export default function Home() {
           in a central next app.
         </p>
 
-        <div className="sm:w-full sm:flex-col flex items-center justify-center flex-wrap max-w-screen-md mt-3">
+        <div className="w-full flex-col md:flex-row flex items-stretch justify-center flex-wrap max-w-screen-md mt-3">
           <Card
             url="truck-alert"
             title="Chapter 2: Truck Alert"
