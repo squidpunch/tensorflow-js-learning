@@ -1,4 +1,3 @@
-import Head from 'next/head';
 import { useState } from 'react';
 import DemoPage from '../components/DemoPage';
 import unique from '../util/unique';

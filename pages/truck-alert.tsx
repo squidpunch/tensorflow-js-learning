@@ -1,4 +1,3 @@
-import Head from 'next/head';
 import { useState, useRef } from 'react';
 import * as mobilenet from '@tensorflow-models/mobilenet';
 import ImageUploader from '../pageComponents/truck-alert/ImageUploader';
