@@ -1,13 +1,16 @@
 import { useRef } from 'react';
 
-const ImageUploader = ({ onUpload }) => {
-  const readFile = (file) => {
+type ImageUploaderProps = {
+  onUpload: (image: HTMLImageElement) => void;
+};
+const ImageUploader = ({ onUpload }: ImageUploaderProps) => {
+  const readFile = (file: File) => {
     return new Promise((resolve, reject) => {
       const fr = new FileReader();
       fr.onload = () => {
         const image = new Image();
         image.crossOrigin = 'Anonymous';
-        image.src = fr.result;
+        image.src = fr.result as string;
         image.onload = () => onUpload(image);
       };
       fr.readAsDataURL(file);
@@ -15,12 +18,9 @@ const ImageUploader = ({ onUpload }) => {
   };
   const inputRef = useRef(null);
 
-  const handleImage = async (image) => {
-    if (image?.files && image?.files?.length > 0) {
-      const fileData = await readFile(image.files[0]);
-      if (fileData) {
-        onUpload(fileData.dataURL);
-      }
+  const handleImage = async (fileInput: HTMLInputElement) => {
+    if (fileInput?.files && fileInput?.files?.length > 0) {
+      readFile(fileInput.files[0]);
     }
   };
 
@@ -29,7 +29,9 @@ const ImageUploader = ({ onUpload }) => {
       <button
         type="button"
         className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
-        onClick={() => inputRef.current?.click()}
+        onClick={() =>
+          (inputRef.current as unknown as HTMLInputElement).click()
+        }
       >
         Upload an Image
       </button>
