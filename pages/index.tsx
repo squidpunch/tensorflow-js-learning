@@ -39,6 +39,11 @@ export default function Home() {
             title="Chapter 4: Sorting Chaos"
             description="Take a random grayscale tensor and sort the pixels."
           />
+          <Card
+            url="cute-faces"
+            title="Chapter 5: Cute Faces"
+            description="Expand the face framing to get the pet face and prep it for another model"
+          />
         </div>
       </main>
 

@@ -7,7 +7,7 @@ type DemoPageProps = {
 };
 
 const DemoPage = ({ title, description, children }: DemoPageProps) => (
-  <div className="flex h-screen items-center justify-center flex-col min-h-screen py-2 px-0">
+  <div className="flex items-center justify-center flex-col min-h-screen py-2 px-0">
     <Head>
       <title>Learning TensorFlow.js | {title}</title>
     </Head>
