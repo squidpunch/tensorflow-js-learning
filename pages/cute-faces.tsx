@@ -1,6 +1,14 @@
 import DemoPage from '../components/DemoPage';
 import * as tf from '@tensorflow/tfjs';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
+
+const clearCanvases = () => {
+  const canvas = document.getElementById('detection') as HTMLCanvasElement;
+  const ctx = canvas.getContext('2d');
+  if (!ctx) return;
+
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+};
 
 const getModelPrediction = (
   model: tf.LayersModel,
@@ -101,17 +109,35 @@ const detectFace = async () => {
 };
 
 const CuteFaces = () => {
+  const [imgSrc, setImgSrc] = useState('/c5/dog1.jpg');
+
+  const updateDog = (value: number) => {
+    clearCanvases();
+    setImgSrc(`c5/dog${value}.jpg`);
+  };
   useEffect(() => {
     detectFace();
-  }, []);
+  }, [imgSrc]);
 
   return (
     <DemoPage
       title="Chapter 5: Cute Faces"
       description="Expand the face framing to get the pet face and prep it for another model"
     >
+      <div className="flex w-full">
+        {[1, 2, 3].map((value) => (
+          <button
+            key={value}
+            type="button"
+            className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded m-2"
+            onClick={() => updateDog(value)}
+          >
+            Dog {value}
+          </button>
+        ))}
+      </div>
       <div className="relative">
-        <img id="pet" src="/dog1.jpg" height="100%" />
+        <img id="pet" src={imgSrc} height="100%" />
         <canvas id="detection" className="left-0 absolute top-0"></canvas>
       </div>
       <div className="font-bold">
