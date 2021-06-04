@@ -44,6 +44,11 @@ export default function Home() {
             title="Chapter 5: Cute Faces"
             description="Expand the face framing to get the pet face and prep it for another model"
           />
+          <Card
+            url="top-detective"
+            title="Chapter 6: Top Dectective"
+            description="Find top matches manually, not using NMS."
+          />
         </div>
       </main>
 
